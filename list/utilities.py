@@ -11,8 +11,8 @@ def createListWindow ():
     listWindow.resizable (False, False)
 
     labelList = tk.Label (master = listWindow,
-                               text = "Prime Numbers up to " + str (reportUtils.limit) + ":",
-                               background = "light blue")
+                               text = "Prime Numbers from 1 to " + str (reportUtils.limit),
+                               background = "gray")
     labelList.place (x = 10,
                      y = 10,
                      width = 780,
@@ -31,7 +31,7 @@ def createButtonToCloseList ():
         listWindow.destroy ()
     
     buttonClose = tk.Button (master = listWindow,
-                              text = "Exit",
+                              text = "Close List",
                               command = close)
     buttonClose.place (x = 10,
                        y = 560,
