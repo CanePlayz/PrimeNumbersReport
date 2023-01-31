@@ -14,4 +14,4 @@ I've created a simple tool which lets you calculate all prime numbers up to a gi
 
 # What's next?
 
-If you have any ideas, feel free to contribute via issue or pull requests.
+There are no specific plans on my end. If you have any ideas, feel free to contribute via issue or pull requests.
