@@ -1,8 +1,9 @@
-import menu.utilities as menuUtils
+import utilities as menuUtils
 
-def createMenu ():
-    menuUtils.createWindow ()
-    menuUtils.createLabel ()
-    menuUtils.createEntry ()
-    menuUtils.createButton ()
-    menuUtils.window.mainloop ()
+
+def createMenu():
+    menuUtils.createWindow()
+    menuUtils.createLabel()
+    menuUtils.createEntry()
+    menuUtils.createButton()
+    menuUtils.window.mainloop()

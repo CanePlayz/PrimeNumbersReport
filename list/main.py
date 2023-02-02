@@ -1,8 +1,9 @@
-import list.utilities as listUtils
+import utilities as listUtils
 
-def openListWindow ():
-    listUtils.createListWindow ()
-    listUtils.printListOnWindow ()
-    listUtils.createButtonToCloseList ()
-    listUtils.createButtonForFile ()
-    listUtils.listWindow.mainloop ()
+
+def openListWindow():
+    listUtils.createListWindow()
+    listUtils.printListOnWindow()
+    listUtils.createButtonToCloseList()
+    listUtils.createButtonForFile()
+    listUtils.listWindow.mainloop()
