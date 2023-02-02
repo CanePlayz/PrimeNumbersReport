@@ -1,4 +1,4 @@
-import utilities as reportUtils
+import report.utilities as reportUtils
 
 
 def createReportWindow():

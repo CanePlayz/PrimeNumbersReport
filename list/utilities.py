@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog as fd
 
-from report.utilities import limit, primes
+import report.utilities as reportUtils
 
 
 def createListWindow():
@@ -13,7 +13,7 @@ def createListWindow():
 
     labelList = tk.Label(master=listWindow,
                          text="Prime Numbers from 1 to " +
-                         str(limit),
+                         str(reportUtils.limit),
                          background="gray")
     labelList.place(x=10,
                     y=10,
@@ -27,7 +27,7 @@ def printListOnWindow():
                    y=50,
                    width=780,
                    height=500)
-    textList.insert(tk.END, str(primes))
+    textList.insert(tk.END, str(reportUtils.primes))
 
 
 def createButtonToCloseList():
@@ -48,7 +48,7 @@ def createButtonForFile():
         file = fd.asksaveasfile(defaultextension=".txt")
         if file is None:
             return
-        file.write(str(primes))
+        file.write(str(reportUtils.primes))
         file.close()
 
     buttonGetListAsFile = tk.Button(master=listWindow,

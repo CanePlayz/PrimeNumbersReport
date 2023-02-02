@@ -1,4 +1,4 @@
-import utilities as listUtils
+import list.utilities as listUtils
 
 
 def openListWindow():

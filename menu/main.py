@@ -1,4 +1,4 @@
-import utilities as menuUtils
+import menu.utilities as menuUtils
 
 
 def createMenu():
