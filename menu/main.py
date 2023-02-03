@@ -5,5 +5,5 @@ def createMenu():
     menuUtils.createWindow()
     menuUtils.createLabel()
     menuUtils.createEntry()
-    menuUtils.createButton()
+    menuUtils.createButtons()
     menuUtils.window.mainloop()
