@@ -22,7 +22,7 @@ jobs:
 
       - name: Create .exe
         run: |
-          pyinstaller --onefile --noconsole main.py
+          pyinstaller --onefile --noconsole -n prime-numbers-report main.py
 
       - name: Upload .exe
         uses: actions/upload-artifact@v3.1.2
