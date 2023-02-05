@@ -1,0 +1,31 @@
+name: Create .exe
+
+on: [push, pull_request]
+
+jobs:
+  create_exe:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.1
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller
+
+      - name: Create .exe
+        run: |
+          pyinstaller --onefile --noconsole
+
+      - name: Upload .exe
+        uses: actions/upload-artifact@v2
+        with:
+          name: prime-numbers-report.exe
+          path: dist\*.exe
