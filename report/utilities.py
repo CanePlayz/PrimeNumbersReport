@@ -17,7 +17,10 @@ def calculateValues():
     global time4
     global primes
     limit = int(menuUtils.entryLimit.get())
-    time1 = alg1.main(limit)
+    if limit < 100000:
+        time1 = round(alg1.main(limit), 5)
+    else:
+        time1 = "Not available"
     time2 = alg2.main(limit)
     time3 = alg3.main(limit)
     time4 = (sieve.main(limit))[0]
@@ -102,7 +105,7 @@ def createReportWindow():
                     height=30)
 
     labelAlgorithm1Time = tk.Label(master=reportWindow,
-                                   text=str(round(time1, 5)) + " sec",
+                                   text=time1,
                                    background="#FF9999")
     labelAlgorithm1Time.place(x=140,
                               y=90,
@@ -133,9 +136,13 @@ def createReportWindow():
                          width=120,
                          height=30)
 
+    if time1 == "Not available":
+        avgTime = str(round((time2 + time3 + time4) / 3, 5)) + " sec"
+    else:
+        avgTime = str(round((time1 + time2 + time3 + time4) / 4, 5)) + " sec"
+
     labelAverageTime = tk.Label(master=reportWindow,
-                                text=str(
-                                    round(((time1 + time2 + time3 + time4) / 4), 5)) + " sec",
+                                text=avgTime,
                                 background="light blue")
     labelAverageTime.place(x=660,
                            y=90,
@@ -152,16 +159,25 @@ def createReportWindow():
                            width=120,
                            height=30)
 
+    if time1 == "Not available":
+        improLimit = "Not available"
+    else:
+        improLimit = "-"
+
     labelAlgorithm1Impro = tk.Label(master=reportWindow,
-                                    text="-",
+                                    text=improLimit,
                                     background="#FF9999")
     labelAlgorithm1Impro.place(x=140,
                                y=130,
                                width=120,
                                height=30)
+    if time1 == "Not available":
+        impro2to1 = "-"
+    else:
+        impro2to1 = str(round(time1 - time2, 5)) + " sec"
 
     labelAlgorithm2Impro = tk.Label(master=reportWindow,
-                                    text=str(round(time1 - time2, 5)) + " sec",
+                                    text=impro2to1,
                                     background="#FFD480")
     labelAlgorithm2Impro.place(x=270,
                                y=130,
@@ -184,9 +200,15 @@ def createReportWindow():
                           width=120,
                           height=30)
 
+    if time1 == "Not available":
+        avgImpro = str(
+            round(((time2 - time3) + (time3 - time4)) / 2, 5)) + " sec"
+    else:
+        avgImpro = str(
+            round(((time1 - time2) + (time2 - time3) + (time3 - time4)) / 3, 5)) + " sec"
+
     labelAverageImpro = tk.Label(master=reportWindow,
-                                 text=str(
-                                     round(((time1 - time2) + (time2 - time3) + (time3 - time4)) / 3, 5)) + " sec",
+                                 text=avgImpro,
                                  background="light blue")
     labelAverageImpro.place(x=660,
                             y=130,
@@ -203,43 +225,67 @@ def createReportWindow():
                             width=120,
                             height=30)
 
+    if time1 == "Not available":
+        improTLimit = "Not available"
+    else:
+        improTLimit = "-"
+
     labelAlgorithm1ImproT = tk.Label(master=reportWindow,
-                                     text="-",
+                                     text=improTLimit,
                                      background="#FF9999")
     labelAlgorithm1ImproT.place(x=140,
                                 y=170,
                                 width=120,
                                 height=30)
 
+    if time1 == "Not available":
+        improT2 = "-"
+    else:
+        improT2 = str(round(time1 - time2, 5)) + " sec"
+
     labelAlgorithm2ImproT = tk.Label(master=reportWindow,
-                                     text=str(
-                                         round(time1 - time2, 5)) + " sec",
+                                     text=improT2,
                                      background="#FFD480")
     labelAlgorithm2ImproT.place(x=270,
                                 y=170,
                                 width=120,
                                 height=30)
 
+    if time1 == "Not available":
+        improT3 = str(round(time2 - time3, 5)) + " sec"
+    else:
+        improT3 = str(round(time1 - time3, 5)) + " sec"
+
     labelAlgorithm3ImproT = tk.Label(master=reportWindow,
-                                     text=str(
-                                         round(time1 - time3, 5)) + " sec",
+                                     text=improT3,
                                      background="#FFE473")
     labelAlgorithm3ImproT.place(x=400,
                                 y=170,
                                 width=120,
                                 height=30)
 
+    if time1 == "Not available":
+        improT4 = str(round(time2 - time4, 5)) + " sec"
+    else:
+        improT4 = str(round(time1 - time4, 5)) + " sec"
+
     labelSieveImproT = tk.Label(master=reportWindow,
-                                text=str(round(time1 - time4, 5)) + " sec",
+                                text=improT4,
                                 background="light green")
     labelSieveImproT.place(x=530,
                            y=170,
                            width=120,
                            height=30)
 
+    if time1 == "Not available":
+        avgImproT = str(
+            round(((time2 - time3) + (time2 - time4)) / 2, 5)) + " sec"
+    else:
+        avgImproT = str(
+            round(((time1 - time2) + (time1 - time3) + (time1 - time4)) / 3, 5)) + " sec"
+
     labelAverageImproT = tk.Label(master=reportWindow,
-                                  text=str(
-                                      round(((time1 - time2) + (time1 - time3) + (time1 - time4)) / 3, 5)) + " sec",
+                                  text=avgImproT,
                                   background="light blue")
     labelAverageImproT.place(x=660,
                              y=170,
