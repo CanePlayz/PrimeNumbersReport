@@ -3,7 +3,7 @@ name: Create .exe
 on: [push, pull_request]
 
 jobs:
-  Create .exe:
+  Create\s.exe:
     runs-on: windows-latest
 
     steps:
