@@ -22,7 +22,7 @@ jobs:
 
       - name: Create .exe
         run: |
-          pyinstaller --onefile --noconsole
+          pyinstaller --onefile --noconsole --scriptname main.py
 
       - name: Upload .exe
         uses: actions/upload-artifact@v2
