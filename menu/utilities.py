@@ -1,15 +1,6 @@
-from tkinter import Tk, ttk, font
+from tkinter import Tk, font, ttk
+
 import report.main as mainReport
-
-# import report.main as mainReport
-
-
-""" class App:
-    def __init__(self, master: Tk) -> None:
-        self.master = master
-        self.defaultFont = font.nametofont("TkDefaultFont")
-        self.defaultFont.configure(family="Segoe UI",
-                                   size=8) """
 
 
 def createWindow():
@@ -19,8 +10,8 @@ def createWindow():
     window.title("Primes Runtime Comparison")
     window.geometry("355x83")
     window.resizable(False, False)
-    # app = App(window)
-    # window.option_add("*font", "Segoe UI", 20)
+    print("Screen height: " + str(Tk.winfo_screenheight(window)))
+    print("Screen width: " + str(Tk.winfo_screenwidth(window)))
 
 
 def createLabel():

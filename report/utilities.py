@@ -4,9 +4,9 @@ import algorithms.algorithm1 as alg1
 import algorithms.algorithm2 as alg2
 import algorithms.algorithm3 as alg3
 import algorithms.sieve as sieve
+import list.main as listMain
 import menu.main as menuMain
 import menu.utilities as menuUtils
-import list.main as listMain
 
 
 def calculateValues():
